@@ -3,17 +3,18 @@ pipeline {
   stages {
     stage('--- clean ---') {
       steps {
-        sh "/usr/bin/mvn clean"
+        sh "git clone https://github.com/rahul-git1/hello-world-master.git" 
+        sh "/opt/maven/mvn clean -f hello-world-master"
       }
     }
     stage('--- test ---') {
       steps {
-        sh "/usr/bin/mvn test"
+        sh "/opt/maven/mvn test -f hello-world-master"
       }
     }
     stage('--- package ---') {
       steps {
-        sh "/usr/bin/mvn package"
+        sh "/opt/maven/mvn package -f hello-world-master"
       }
     }
   }
