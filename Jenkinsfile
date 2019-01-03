@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('--- clean ---') {
       steps {
-        sh "git clone https://github.com/rahul-git1/hello-world-master.git" 
+        sh "rm -rf .*;git clone https://github.com/rahul-git1/hello-world-master.git" 
         sh "/opt/maven/mvn clean -f hello-world-master"
       }
     }
